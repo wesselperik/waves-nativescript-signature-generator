@@ -6,7 +6,8 @@ declare const Buffer: any;
 
 
 function nodeRandom(count, options) {
-    const crypto = require('crypto');
+    // const crypto = require('crypto');
+    const crypto = require('crypto-browserify');
     const buf = crypto.randomBytes(count);
 
     switch (options.type) {
