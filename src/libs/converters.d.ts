@@ -1,0 +1,25 @@
+import { BigNumber } from '@waves/data-entities';
+declare let converters: {
+    byteArrayToHexString: (bytes: any) => string;
+    stringToByteArray: (str: any) => number[];
+    hexStringToByteArray: (str: any) => any[];
+    stringToHexString: (str: any) => any;
+    hexStringToString: (hex: any) => any;
+    checkBytesToIntInput: (bytes: any, numBytes: any, opt_startIndex: any) => any;
+    byteArrayToSignedShort: (bytes: any, opt_startIndex: any) => any;
+    byteArrayToSignedInt32: (bytes: any, opt_startIndex: any) => any;
+    byteArrayToBigInteger: (bytes: any, opt_startIndex: any) => BigNumber;
+    byteArrayToWordArray: (byteArray: any) => any;
+    wordArrayToByteArray: (wordArray: any) => any[];
+    wordArrayToByteArrayImpl: (wordArray: any, isFirstByteHasSign: any) => any[];
+    byteArrayToString: (bytes: any, opt_startIndex?: any, length?: any) => string;
+    byteArrayToShortArray: (byteArray: any) => number[];
+    shortArrayToByteArray: (shortArray: any) => number[];
+    shortArrayToHexString: (ary: any) => string;
+    intToBytes_: (x: any, numBytes: any, unsignedMax: any, opt_bigEndian: any) => any[];
+    int32ToBytes: (x: any, opt_bigEndian: any) => any[];
+    int16ToBytes: (x: any, opt_bigEndian: any) => any[];
+    wordArrayToByteArrayEx: (wordArray: any) => Uint8Array;
+    byteArrayToWordArrayEx: (u8arr: any) => any;
+};
+export default converters;

@@ -1,0 +1,13 @@
+export declare function parseTransactionBytes(bytes: Uint8Array): any;
+export declare function parseOrderBytes(): void;
+export declare const parseIssueTx: (bytes: any) => any;
+export declare const parseTransferTx: (bytes: any) => any;
+export declare const parseReissueTx: (bytes: any) => any;
+export declare const parseBurnTx: (bytes: any) => any;
+export declare const parseLeaseTx: (bytes: any) => any;
+export declare const parseCancelLeaseTx: (bytes: any) => any;
+export declare const parseCreateAliasTx: (bytes: any) => any;
+export declare const parseMassTransferTx: (bytes: any) => any;
+export declare const parseDataTx: (bytes: any) => any;
+export declare const parseSetScriptTx: (bytes: any) => any;
+export declare const parseSponsorshipTx: (bytes: any) => any;
