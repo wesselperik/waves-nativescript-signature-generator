@@ -1,12 +1,18 @@
 {
-  "name": "@waves/signature-generator",
-  "version": "1.0.8",
-  "main": "dist/index.js",
+  "name": "waves-nativescript-signature-generator",
+  "version": "1.0.0",
+  "nativescript": {
+    "platforms": {
+      "ios": "5.0.0",
+      "android": "5.0.0"
+    }
+  },
+  "main": "/dist/index.js",
   "files": [
-    "dist",
-    "src"
+    "/dist",
+    "/src"
   ],
-  "types": "src/index.ts",
+  "types": "/src/index.ts",
   "dependencies": {
     "@waves/data-entities": "^1.6.0",
     "base64-js": "1.3.0",
@@ -18,13 +24,13 @@
     "postpublish": "git push",
     "prepare": "npm run build",
     "test": "jest",
-    "compile": "tsc -p ./",
-    "prepublish": "npm run test",
+    "compile": " cd .. && rm -rf /dist && tsc -p ./",
+    "prepublish": "",
     "uglify": "npm run uglify-full && npm run uglify-partial",
-    "uglify-full": "node_modules/.bin/uglifyjs dist/signature-generator.js -o dist/signature-generator.min.js",
-    "uglify-partial": "node_modules/.bin/uglifyjs dist/signature-generator.partial.js -o dist/signature-generator.partial.min.js",
-    "build-full": "node_modules/.bin/browserify dist/index.js -s wavesSignatureGenerator --node -o dist/signature-generator.js",
-    "build-partial": "node_modules/.bin/browserify dist/index.js -u @waves/data-entities --node -s wavesSignatureGenerator -o dist/signature-generator.partial.js",
+    "uglify-full": "node_modules/.bin/uglifyjs /dist/signature-generator.js -o /dist/signature-generator.min.js",
+    "uglify-partial": "node_modules/.bin/uglifyjs /dist/signature-generator.partial.js -o /dist/signature-generator.partial.min.js",
+    "build-full": "node_modules/.bin/browserify /dist/index.js -s wavesSignatureGenerator --node -o /dist/signature-generator.js",
+    "build-partial": "node_modules/.bin/browserify /dist/index.js -u @waves/data-entities --node -s wavesSignatureGenerator -o /dist/signature-generator.partial.js",
     "build": "npm run compile && npm run build-full && npm run build-partial && npm run uglify"
   },
   "jest": {
@@ -42,7 +48,7 @@
       "^.+\\.(ts|tsx)$": "ts-jest"
     },
     "testMatch": [
-      "**/test/**/*.test.+(ts|tsx|js)"
+      "../**/test/**/*.test.+(ts|tsx|js)"
     ]
   },
   "devDependencies": {
