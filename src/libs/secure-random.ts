@@ -7,14 +7,17 @@ declare const Buffer: any;
 
 function nodeRandom(count, options) {
     // const crypto = require('crypto');
-    const crypto = require('crypto-browserify');
-    const buf = crypto.randomBytes(count);
+    // const crypto = require('crypto-browserify');
+    var randomBytes = require('nativescript-randombytes');
+
+    // require("nativescript-nodeify");
+    const buf = randomBytes(count);
 
     switch (options.type) {
         case 'Array':
             return [].slice.call(buf);
-        case 'Buffer':
-            return buf;
+        // case 'Buffer':
+        //     return buf;
         case 'Uint8Array':
             const arr = new Uint8Array(count);
             for (let i = 0; i < count; ++i) {
