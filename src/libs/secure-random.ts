@@ -1,18 +1,11 @@
+import { Buffer } from 'buffer';
+
 declare let exports: any;
 declare let module: any;
 declare let require: any;
 
-// declare const Buffer: any;
-declare var Buffer: any;
-
-
 function nodeRandom(count, options) {
-    // const crypto = require('crypto');
-    // const crypto = require('crypto-browserify');
-    Buffer = require("buffer").Buffer;
     var randomBytes = require('nativescript-randombytes');
-
-    // require("nativescript-nodeify");
     const buf = randomBytes(count);
 
     switch (options.type) {
@@ -34,7 +27,6 @@ function nodeRandom(count, options) {
 function browserRandom(count, options) {
     const nativeArr = new Uint8Array(count);
     const crypto = self.crypto || (self as any).msCrypto;
-    Buffer = require("buffer").Buffer;
     crypto.getRandomValues(nativeArr);
 
     switch (options.type) {
